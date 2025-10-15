@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utility for the neon hero */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.hero{position:relative;width:100%;min-height:100vh;overflow:hidden;background:#000}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+.overlay{position:absolute;inset:0;z-index:1}
+.hotspot{position:absolute;transform:translate(-50%,-50%);background:rgba(0,0,0,.6);color:#fff;
+  font-size:14px;padding:6px 10px;border-radius:6px;text-decoration:none;
+  transition:background .2s;white-space:nowrap;border:1px solid rgba(255,255,255,.15)}
+.hotspot:hover{background:rgba(255,255,255,.25)}
+
+/* Collapsible info panel */
+.info-panel{position:absolute;left:0;right:0;bottom:0;z-index:2;
+  background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.35) 45%,rgba(0,0,0,0));
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color:#fff; padding:16px 12px}
+.safe{max-width:1100px;margin:0 auto}
+.info-toggle{appearance:none;background:rgba(0,0,0,.45);color:#fff;border:1px solid rgba(255,255,255,.14);
+  border-radius:10px;padding:8px 12px;font:600 13px/1.1 system-ui,Segoe UI,Inter,Arial;display:inline-flex;gap:8px;align-items:center}
+.info-toggle:hover{background:rgba(255,255,255,.08)}
+.info-toggle .label-open{display:none}
+.info-panel[data-collapsed="false"] .info-toggle .label-open{display:inline}
+.info-panel[data-collapsed="false"] .info-toggle .label-closed{display:none}
+.info-toggle .chev{display:inline-block;transition:transform .2s}
+.info-panel[data-collapsed="false"] .info-toggle .chev{transform:rotate(180deg)}
+
+.info-toolbar{margin-top:10px;display:flex;align-items:center;gap:8px}
+.btn{appearance:none;background:rgba(0,0,0,.45);color:#fff;border:1px solid rgba(255,255,255,.14);
+  border-radius:10px;padding:8px 12px;font:600 13px/1 system-ui,Segoe UI,Inter,Arial;cursor:pointer}
+.btn:hover{background:rgba(255,255,255,.08)}
+.btn.primary{background:rgba(0,192,255,.18);border-color:rgba(0,192,255,.35)}
+.muted{color:rgba(255,255,255,.7);font-size:12px;margin-left:6px}
+
+.info-content{margin-top:10px;border:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.35);
+  border-radius:12px;padding:14px 16px;line-height:1.45;overflow:hidden;max-height:0;transition:max-height 300ms ease}
+.info-content h2{margin:0 0 6px;font-size:16px;font-weight:700}
+.info-content p{margin:6px 0;font-size:14px}
+
+@media (prefers-reduced-motion: reduce){ .info-content{transition:none} }
