@@ -5,7 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Optional: Add any other config you need
+  // Skip API routes during static export
+  skipTrailingSlashRedirect: true,
 }
 
 module.exports = nextConfig
