@@ -5,10 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Optional: if you need environment variables
-  env: {
-    // Add any env vars here if needed
-  }
+  // Optional: Add any other config you need
 }
 
-export default nextConfig
+module.exports = nextConfig
