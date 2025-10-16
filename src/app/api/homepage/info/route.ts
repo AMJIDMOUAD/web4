@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-export const dynamic = "force-dynamic";
 
 const DATA_DIR = path.join(process.cwd(), ".data");
 const SNAP     = path.join(DATA_DIR, "homepage.info.json");
